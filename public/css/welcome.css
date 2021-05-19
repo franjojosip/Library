@@ -1,0 +1,346 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.inactiveLink {
+    pointer-events: none;
+    cursor: pointer !important;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.carousel-item {
+    height: 100vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 2vw;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.carousel-caption p {
+    width: 75%;
+    margin: auto;
+    font-family: "sans-serif";
+    font-size: 24px;
+    line-height: 1.9;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+    font-size: 29px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.nav-link {
+    padding: 0.2rem 1rem;
+}
+
+.nav-link.active {
+    background: none;
+    color: #f8a379 !important;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.navbar > .container {
+    display: block;
+}
+
+.navbar-brand {
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-brand:hover {
+    color: white !important;
+}
+
+.nav-link {
+    font-size: 18px !important;
+    color: white !important;
+    text-align-last: center;
+}
+
+.active {
+    color: #f8a379 !important;
+}
+
+.nav-link:hover {
+    background: none;
+    color: #f8a379 !important;
+}
+
+.dropdown-menu {
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    top: 100%;
+    right: 0;
+    margin-left: -20px;
+}
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-item.active,
+.carousel-item .view {
+    height: 50% !important;
+}
+
+.carousel-item.book.active,
+.carousel-item .book .view {
+    overflow: hidden !important;
+    height: 700px !important;
+}
+
+.carousel {
+    height: 50% !important;
+}
+
+.carousel-inner {
+    height: 50% !important;
+}
+
+@media all and (max-width: 800px) {
+    .carousel-caption {
+        height: 50px !important;
+    }
+
+    .carousel-caption p {
+        display: none !important;
+    }
+
+    #about-us {
+        font-size: 35px !important;
+    }
+
+    #raise-title {
+        padding: 20px !important;
+        font-size: 35px !important;
+    }
+
+    #raise-description {
+        font-size: 3vw !important;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .carousel-item.book.active,
+    .carousel-item.book .view {
+        overflow: hidden !important;
+        height: 400px !important;
+    }
+
+    .navbar-brand {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .navbar-toggler {
+        float: right;
+    }
+
+    .navbar-nav {
+        margin-top: 30px;
+    }
+
+    .dropdown-menu {
+        width: 200px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0) !important;
+    }
+}
+
+@media all and (max-width: 1450px) {
+    .container-raising {
+        height: 70vh !important;
+    }
+}
+
+.carousel-caption {
+    top: 50%;
+    height: auto;
+    text-align: center;
+    transform: translateY(-50%);
+    bottom: initial;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#about-us {
+    color: #4d4d4d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+}
+
+#row-title {
+    font-size: 20px;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    height: 100px;
+    width: 100px;
+    outline: transparent;
+    background-size: 100%, 100%;
+    border: transparent;
+    background-image: none;
+}
+.carousel-control-next-icon:after {
+    content: ">";
+    font-size: 55px;
+    color: rgba(0, 0, 0, 0.788);
+}
+
+.carousel-control-prev-icon:after {
+    content: "<";
+    font-size: 55px;
+    color: black;
+}
+
+.row {
+    padding-bottom: 20px;
+}
+
+.col-10 {
+    padding: 10px;
+}
+
+.col-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-raising {
+    height: 60vh;
+    color: white !important;
+    margin-top: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#raise-title {
+    color: white;
+    padding: 80px 80px 20px 80px;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+}
+
+#raise-description {
+    color: white;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: min(2vw, 28px);
+    text-align: center;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+}
+
+.col-12 {
+    padding: 0px;
+}
+
+.footer-basic {
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: #4b4c4d;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.footer-basic .social > a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social > a:hover {
+    opacity: 0.9;
+}
+
+.footer-basic .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 17px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+.w-100-popular {
+    width: 70% !important;
+    height: 75vh;
+    margin: 0 auto;
+}

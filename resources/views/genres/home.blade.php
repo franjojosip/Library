@@ -15,40 +15,56 @@
 </div>
 @endif
 <div class="container">
+    <div class="col-md-10" style="margin-left:10px;display: flex; justify-content: flex-end">
+        @auth
+        @if(auth()->user()->role->name == 'Administrator')
+        <a class="btn btn-small btn-primary btn-add" style="margin-bottom: 10px;" href="{{ url('/genres/add') }}">{{ __('form.genre_add_new') }}</a>
+        @endif
+        @endauth
+    </div>
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
-                    <span style="font-size:large">{{ __('Genres') }}</span>
-                    <a class="btn btn-small btn-primary" style="float:right;" href="{{ url('/genres/add') }}">{{ __('Add') }}</a>
+                <div class="card-header" style="padding:0px">
+                    <h4 id="title">{{ __('form.genre_title') }}</h4>
                 </div>
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th style="text-align:center">Genre</th>
-                            <th style="text-align:center">Action</th>
+                            <th style="text-align:center">{{ __('form.genre_name') }}</th>
+                            @auth
+                            @if(auth()->user()->role->name == 'Administrator')
+                            <th style="text-align:center">{{ __('form.action') }}</th>
+                            @endif
+                            @endauth
                         </tr>
                     </thead>
                     <tbody>
                         @forelse($genres as $genre)
                         <tr>
                             <td style="text-align:center">{{$genre->name}}</td>
+                            @auth
+                            @if(auth()->user()->role->name == 'Administrator')
                             <td style="text-align:center">
-                                @if(auth()->user()->role->name == 'Administrator')
-                                <a class="btn btn-small btn-info" href="{{ url('genres/update/' . $genre->id) }}">Edit</a>
+                                <a class="btn btn-small btn-info" href="{{ url('genres/update/' . $genre->id) }}">{{ __('form.edit') }}</a>
                                 <form method="POST" action="/genres/remove/{{$genre->id}}" style="display: inline-block">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <input type="submit" class="btn btn-small btn-danger" value="{{ __('Delete') }}" onClick="return confirm('Delete a genre?')">
+                                    <input type="submit" class="btn btn-small btn-danger" value="{{ __('form.delete') }}" onClick="return confirm('{{$question_delete}}')">
                                 </form>
-                                @endif
                             </td>
+                            @endif
+                            @endauth
                         </tr>
                         @empty
                         <tr>
-                            <td style="text-align:center"><b>No Genres</b></td>
+                            <td style="text-align:center"><b>{{ __('form.genre_empty') }}</b></td>
+                            @auth
+                            @if(auth()->user()->role->name == 'Administrator')
                             <td style="text-align:center"></td>
+                            @endif
+                            @endauth
                         </tr>
                         @endforelse
                     </tbody>

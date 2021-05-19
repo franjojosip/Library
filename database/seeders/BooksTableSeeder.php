@@ -38,7 +38,7 @@ class BooksTableSeeder extends Seeder
         Book::create([
             'name' => 'U glib i druge pripovijesti',
             'description' => 'Zbirka sadrži pet pripovijetki: "Lutrijašica", "U glib", "Nezasitnost i bijeda", "Iz velegradskog podzemlja" i "Pripovijest o Marcelu Remeniću". Opisujući razne društvene slojeve i prilike, različite krajeve i ljude, uglavnom obespravljene i siromašne, pisac koji je jedan od najplodnijih hrvatskih realista, na izuzetno vješt način progovara o životnim nedaćama i nepravdama izazivajući sućut brojnih naraštaja čitatelja. Metodički instrumentarij olakšava razumijevanje djela, a obuhvaća analizu svake od pripovjedaka.',
-            'image_url' => 'https://katalog.kgz.hr/pagesresults/cover.aspx?bibliografskiZapisId=1031001693&thumb=0&pozivatelj=rezultati',
+            'image_url' => 'http://www.logovita.ba/1306-thickbox_default/u-glib-i-druge-pripovijetke.jpg',
             'published_at' => Carbon::create('2003', '01', '01'),
             'author_id' => '1',
             'genre_id' => '3',
@@ -127,11 +127,11 @@ class BooksTableSeeder extends Seeder
         ]);
         Book::create([
             'name' => 'Priče iz davnine',
-            'description' => 'riče iz davnine, glasovita zbirka od osam pripovijetki-bajki Ivane Brlić-Mažuranić, u kojima je autorica ostvarila svoj književni vrhunac. Zbirka je objavljena 1916. u izdanju Matice hrvatske, a drugo izdanje doživljava 1926. ',
+            'description' => 'Priče iz davnine, glasovita zbirka od osam pripovijetki-bajki Ivane Brlić-Mažuranić, u kojima je autorica ostvarila svoj književni vrhunac. Zbirka je objavljena 1916. u izdanju Matice hrvatske, a drugo izdanje doživljava 1926. ',
             'image_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvg37QtR3VptPI6M2CqHtm15vvf4ZLcNuPK-o088GM8CCrGNY',
             'published_at' => Carbon::create('2009', '01', '01'),
             'author_id' => '6',
-            'genre_id' => '6',
+            'genre_id' => '5',
             'publisher_id' => '7',
             'total_copies' => '3'
         ]);
@@ -141,7 +141,7 @@ class BooksTableSeeder extends Seeder
             'image_url' => 'https://znanje.hr/product-images/50cc9ea2-c83c-41eb-b3f5-0c03bc63f62d.jpg',
             'published_at' => Carbon::create('2007', '01', '01'),
             'author_id' => '6',
-            'genre_id' => '6',
+            'genre_id' => '5',
             'publisher_id' => '6',
             'total_copies' => '3'
         ]);
@@ -218,7 +218,7 @@ class BooksTableSeeder extends Seeder
         Book::create([
             'name' => 'Zločin i kazna',
             'description' => 'Zločin i kazna je roman ruskog pisca Fjodora Mihajloviča Dostojevskog izdan 1866. godine u časopisu Ruski vjesnik. Smatra se jednim od najvećih djela ruske književnosti.',
-            'image_url' => 'https://lh3.googleusercontent.com/proxy/1gGYecRG_pefKzUQs5Y6c3hyytxZlvi0CB48eIxqcepXbb8WGyfQLiECyhW8qgxVQBFnG-T54M4gjXMOTxPoGVYqp9kNwqKgOk3u9A2QxiFN6DpjKDclbqUDSE7Ttl6ImbU2hw',
+            'image_url' => 'http://www.logovita.ba/4263-thickbox_default/zlocin-i-kazna.jpg',
             'published_at' => Carbon::create('1961', '01', '01'),
             'author_id' => '11',
             'genre_id' => '3',
@@ -288,7 +288,7 @@ class BooksTableSeeder extends Seeder
         Book::create([
             'name' => 'Pustolovine Toma Sawyera',
             'description' => 'Pustolovine Toma Sawyera je roman kojeg je napisao Mark Twain. Roman je objavljen 1876., a pisan tri godine Ima i nastavak, no Tom Sawyer, urota nije završen. Glavni likovi su Tom Sawyer, Hucklebery Finn i Becky, a sporedni teta Polly, Crveni Joe, Sid, Mary...',
-            'image_url' => 'https://shop.skolskaknjiga.hr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/7/170480.jpg',
+            'image_url' => 'http://www.logovita.ba/6833-thickbox_default/pustolovine-toma-sawyera.jpg',
             'published_at' => Carbon::create('1965', '01', '01'),
             'author_id' => '15',
             'genre_id' => '3',

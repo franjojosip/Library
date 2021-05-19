@@ -19,28 +19,28 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card">
-                    <div class="card-header">
-                        <span style="font-size:large">{{ __('Profile') }}</span>
+                    <div class="card-header" style="padding:0px">
+                        <h1 id="title">{{ __('form.profile_title') }}</h1>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-text">Username: Admin</h5>
-                        <h5 class="card-text">Email: admin@mail.com</h5>
-                        <h5 class="card-text">You can only borrow 3 books.</h5>
+                    <div class="modal-body">
+                        <h5 class="modal-text"><b>{{ __('form.profile_username') }}:</b> {{auth()->user()->name}}</h5>
+                        <h5 class="modal-text"><b>{{ __('form.profile_email') }}:</b> {{auth()->user()->email}}</h5>
+                        <h5 class="modal-text">{{ __('form.profile_message') }} {{auth()->user()->book_limit}} {{ __('form.profile_book') }}.</h5>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <span style="font-size:large">{{ __('Borrowed books') }}</span>
+                        <span style="font-size:large"><b>{{ __('form.profile_borrowed') }}</b></span>
                     </div>
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th style="text-align:center">Book Name</th>
-                                <th style="text-align:center">Publish Year</th>
-                                <th style="text-align:center">Author</th>
-                                <th style="text-align:center">Genre</th>
-                                <th style="text-align:center">Publisher</th>
-                                <th style="text-align:center">Action</th>
+                                <th style="text-align:center">{{ __('form.book_name') }}</th>
+                                <th style="text-align:center">{{ __('form.book_publish') }}</th>
+                                <th style="text-align:center">{{ __('form.book_author') }}</th>
+                                <th style="text-align:center">{{ __('form.book_genre') }}</th>
+                                <th style="text-align:center">{{ __('form.book_publisher') }}</th>
+                                <th style="text-align:center">{{ __('form.action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,12 +52,12 @@
                                 <td style="text-align:center">{{$book->genre->name}}</td>
                                 <td style="text-align:center">{{$book->publisher->name}}</td>
                                 <td style="text-align:center">
-                                    <a class="btn btn-small btn-success" href="{{ url('profile/return/' . $book->id) }}">Return book</a>
+                                    <a class="btn btn-small btn-success" href="{{ url('profile/return/' . $book->id) }}">{{ __('form.profile_return_book') }}</a>
                                 </td>
                             </tr>
                             @empty
                             <tr>
-                                <td style="text-align:center"><b>No Books</b></td>
+                                <td style="text-align:center"><b>{{ __('form.books_empty') }}</th></b></td>
                                 <td style="text-align:center"></td>
                                 <td style="text-align:center"></td>
                                 <td style="text-align:center"></td>

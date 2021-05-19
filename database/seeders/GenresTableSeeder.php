@@ -16,7 +16,7 @@ class GenresTableSeeder extends Seeder
     {        
         Genre::create(['name' => 'Action and Adventure']);
         Genre::create(['name' => 'Classic']);
-        Genre::create(['name' => 'Comic Book or Graphic Novel']);
+        Genre::create(['name' => 'Comic Book or Novel']);
         Genre::create(['name' => 'Detective and Mystery']);
         Genre::create(['name' => 'Fantasy']);
         Genre::create(['name' => 'Western']);
@@ -30,6 +30,6 @@ class GenresTableSeeder extends Seeder
         Genre::create(['name' => 'Essay']);
         Genre::create(['name' => 'History']);
         Genre::create(['name' => 'Poetry']);
-        Genre::create(['name' => 'History']);
+        Genre::create(['name' => 'Drama']);
     }
 }

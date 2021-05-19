@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthorRequest;
 use App\Models\Author;
+use Illuminate\Support\Facades\Lang;
 
 class AuthorController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['index']);
     }
 
     public function index()
     {
-        $authors = Author::all()->sortByDesc('created_at');
-        return view('authors.home')->with('authors', $authors);
+        $question_delete = Lang::get('message.question_delete');
+        $authors = Author::all()->sortBy('name');
+        return view('authors.home', compact('authors','question_delete'));
     }
 
     public function add()
@@ -26,14 +28,16 @@ class AuthorController extends Controller
     public function create(AuthorRequest $request)
     {
         Author::create($request->validated());
-        return redirect('/authors')->with('success', 'Author successfully created!');
+        $message = Lang::get('message.success_create', array('name' => $this->getAuthor()));
+        return redirect('/authors')->with('success', $message);
     }
 
     public function update($id)
     {
         $author = Author::find($id);
         if ($author == null) {
-            return redirect('/authors')->with('error', 'Author with given ID doesn\'t exist.');
+            $message = Lang::get('message.error_not_exist', array('name' => $this->getAuthor()));
+            return redirect('/authors')->with('error', $message);
         }
         return view('authors.update', compact('author'));
     }
@@ -42,22 +46,35 @@ class AuthorController extends Controller
     {
         $author = Author::find($id);
         if ($author == null) {
-            return redirect('/authors')->with('error', 'Author with given ID doesn\'t exist.');
+            $message = Lang::get('message.error_not_exist', array('name' => $this->getAuthor()));
+            return redirect('/authors')->with('error', $message);
         }
         $validated = $request->validated();
         $author->fill($validated)->save();
-        return redirect('/authors')->with('success', 'Author successfully updated!');
+        $message = Lang::get('message.success_edit', array('name' => $this->getAuthor()));
+        return redirect('/authors')->with('success', $message);
     }
 
     public function remove($id)
     {
         $author = Author::find($id);
         if ($author == null) {
-            return redirect('/authors')->with('error', 'Author with given ID doesn\'t exist.');
+            $message = Lang::get('message.error_not_exist', array('name' => $this->getAuthor()));
+            return redirect('/authors')->with('error', $message);
         } else if ($author->books()->count() > 0) {
-            return redirect('/authors')->with('error', 'Cannot delete, author is connected with some book records.');
+            $message = Lang::get('message.error_cant_delete', array('name' => $this->getAuthor()));
+            return redirect('/authors')->with('error', $message);
         }
         $author->delete();
-        return redirect('/authors')->with('success', 'Author successfully deleted!');
+        $message = Lang::get('message.success_delete', array('name' => $this->getAuthor()));
+        return redirect('/authors')->with('success', $message);
+    }
+
+    public function getAuthor()
+    {
+        if (app()->getLocale() == 'hr') {
+            return "Autor";
+        }
+        return "Author";
     }
 }

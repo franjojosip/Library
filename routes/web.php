@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Book;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +16,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('locale/{locale}', function ($locale) {
+    Session::put('locale', $locale);
 
+    if (request()->fullUrl() === redirect()->back()->getTargetUrl()) {
+        return redirect('/');
+    }
 
-Route::get('/', function () {
-    return view('welcome');
+    return redirect()->back();
 });
 
-//For authenticated and non authenticated users
+Route::get('/', function () {
+    $most_popular = DB::table('book_users')
+        ->select('book_id', DB::raw('count(*) as total'))
+        ->groupBy('book_id')
+        ->take(3)
+        ->get()
+        ->pluck('book_id');
+
+    $books = Book::find($most_popular);
+    return view('welcome', compact('books'));
+});
+
+
+//For all users and guests
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/books', [App\Http\Controllers\BookController::class, 'index'])->name('books');
+Route::get('/books/filter', [App\Http\Controllers\BookController::class, 'filter']);
+Route::get('/books/show/{id}', [App\Http\Controllers\BookController::class, 'show']);
+
 Route::get('/authors', [App\Http\Controllers\AuthorController::class, 'index'])->name('authors');
 Route::get('/publishers', [App\Http\Controllers\PublisherController::class, 'index'])->name('publishers');
 Route::get('/genres', [App\Http\Controllers\GenreController::class, 'index'])->name('genres');
