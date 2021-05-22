@@ -23,13 +23,19 @@ html {
 }
 
 .carousel-caption h5 {
-    font-size: 2vw;
+    font-size: calc(5px + 2vw);
     font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .carousel-caption p {
+    font-family: "sans-serif";
+    font-size: 24px;
+    line-height: 1.9;
+}
+
+.main-text {
     width: 75%;
     margin: auto;
     font-family: "sans-serif";
@@ -38,6 +44,7 @@ html {
 }
 
 .navbar-dark .navbar-brand {
+    margin-right: 1px;
     color: #fff;
     font-size: 29px;
     text-transform: uppercase;
@@ -46,7 +53,7 @@ html {
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.95);
 }
 
 .navbar-nav {
@@ -74,7 +81,7 @@ html {
 }
 
 .navbar-brand {
-    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    font-family: "Roboto";
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -102,7 +109,7 @@ html {
 
 .dropdown-menu {
     margin-top: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.95);
     top: 100%;
     right: 0;
     margin-left: -20px;
@@ -135,27 +142,62 @@ html {
 .carousel-inner {
     height: 50% !important;
 }
+.carousel-inner .item {
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+}
+@media all and (max-width: 580px) {
+    .about-us-img {
+        height: 10vw !important;
+        width: auto !important;
+    }
+
+    .row {
+        margin-right: 0px;
+    }
+
+    .container.about {
+        padding-right: 0px;
+    }
+    p {
+        font-size: 3vw !important;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #row-title {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 
 @media all and (max-width: 800px) {
     .carousel-caption {
-        height: 50px !important;
-    }
-
-    .carousel-caption p {
-        display: none !important;
+        height: auto !important;
     }
 
     #about-us {
         font-size: 35px !important;
     }
 
+    .container-raising {
+        height: auto;
+        background-size: auto !important;
+        min-height: 40vh !important;
+    }
     #raise-title {
         padding: 20px !important;
-        font-size: 35px !important;
+        font-size: 6vw !important;
     }
 
     #raise-description {
-        font-size: 3vw !important;
+        font-size: calc(8px + 1.1vw);
+    }
+}
+
+@media all and (max-width: 550px) {
+    .navbar-brand {
+        font-size: 6vw !important;
     }
 }
 
@@ -163,7 +205,7 @@ html {
     .carousel-item.book.active,
     .carousel-item.book .view {
         overflow: hidden !important;
-        height: 400px !important;
+        height: 380px !important;
     }
 
     .navbar-brand {
@@ -193,12 +235,23 @@ html {
 }
 
 .carousel-caption {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption.main {
     top: 50%;
     height: auto;
     text-align: center;
     transform: translateY(-50%);
     bottom: initial;
     background: rgba(0, 0, 0, 0.8);
+}
+
+.main-header {
+    font-size: 2vw;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #about-us {
@@ -260,7 +313,7 @@ html {
 #raise-title {
     color: white;
     padding: 80px 80px 20px 80px;
-    font-size: 40px;
+    font-size: 2vw;
     text-align: center;
     font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
 }
@@ -268,9 +321,9 @@ html {
 #raise-description {
     color: white;
     padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-    font-size: min(2vw, 28px);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: calc(8px + 1.1vw);
     text-align: center;
     font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
 }
@@ -340,7 +393,7 @@ html {
 }
 
 .w-100-popular {
-    width: 70% !important;
+    width: 80% !important;
     height: 75vh;
     margin: 0 auto;
 }

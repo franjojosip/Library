@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card show-book">
                 <form method="post" action="{{ url('/books/edit', array($book->id)) }}">
                     {{csrf_field()}}
                     @method('PUT')
@@ -14,7 +14,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <img src="{{$book->image_url}}" class="d-block" style="width:400px;height:600px;margin:0 auto;" alt="...">
+                            <img src="{{$book->image_url}}" class="form-control" id="book-show-img"  alt="...">
                         </div>
                         <div class="form-group">
                             <label>{{ __('form.book_desc') }}</label>

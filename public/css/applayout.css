@@ -2,12 +2,12 @@ html {
     overflow: scroll;
     overflow-x: hidden;
 }
-body{
-    background: url('/images//library_front.jpg');
+body {
+    background: url("/images//library_front.jpg");
 }
 .inactiveLink {
     pointer-events: none;
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -24,7 +24,7 @@ body{
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.95);
 }
 
 .navbar-nav {
@@ -47,7 +47,7 @@ body{
 }
 
 .navbar-brand {
-    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    font-family: serif;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -55,7 +55,7 @@ body{
 }
 
 .navbar-brand:hover {
-    color: white !important;
+    color: white;
 }
 
 .nav-link {
@@ -70,45 +70,19 @@ body{
 
 .nav-link:hover {
     background: none;
-    color: #f8a379 !important;
+    color: #f8a379  !important;
 }
 
 .nav-link.active {
     background: none;
-    color: #f8a379 !important;
+    color: #f8a379  !important;
 }
-
 .dropdown-menu {
     margin-top: 10px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.95);
     top: 100%;
     right: 0;
     margin-left: -20px;
-}
-
-@media all and (max-width: 992px) {
-    .navbar-brand {
-        padding-top: 0px !important;
-        padding-bottom: 0px !important;
-    }
-
-    .navbar-toggler {
-        float: right;
-    }
-
-    .navbar-nav {
-        margin-top: 30px;
-    }
-
-    .dropdown-menu {
-        width: 200px;
-        margin: 0 auto;
-        background: rgba(0, 0, 0, 0) !important;
-    }
-
-    .container.authors {
-        margin: 0 auto;
-    }
 }
 
 .footer-basic {
@@ -198,7 +172,7 @@ main {
     margin-bottom: 0px;
 }
 
-div.form {
+.form {
     display: block;
     text-align: center;
 }
@@ -218,7 +192,7 @@ div.form {
     text-align: center;
     width: 100%;
     font-size: 50px;
-    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    font-family: serif;
 }
 
 .filter {
@@ -235,7 +209,7 @@ div.form {
     text-align: center;
     margin-top: 10px;
     color: rgba(0, 0, 0, 0.9);
-    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    font-family: serif;
 }
 
 .modal-header {
@@ -247,5 +221,46 @@ div.form {
     width: 100%;
     text-align: center;
     color: rgba(0, 0, 0, 0.9);
-    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+    font-family: serif;
+}
+
+#book-show-img {
+    width: 80%;
+    max-width: 450px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+@media all and (max-width: 550px) {
+    .navbar-brand {
+        font-size: 6vw !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    .navbar-brand {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    #book-show-img {
+        width: 90% !important;
+    }
+
+    .navbar-toggler {
+        float: right;
+    }
+
+    .navbar-nav {
+        margin-top: 30px;
+    }
+
+    .dropdown-menu {
+        width: 200px;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0);
+    }
+
+    .container.authors {
+        margin: 0 auto;
+    }
 }

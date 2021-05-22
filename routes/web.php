@@ -51,6 +51,8 @@ Route::get('/genres', [App\Http\Controllers\GenreController::class, 'index'])->n
 
 Route::auth();
 
+Route::get('/config/clear', [App\Http\Controllers\ConfigController::class, 'clear'])->name('config');
+
 //For authenticated users only
 Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
     Route::get('/',  [\App\Http\Controllers\ProfileController::class, 'index']);

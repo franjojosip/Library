@@ -26,8 +26,10 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">PUBLIC LIBRARY</a>
-            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+            <div class="d-flex flex-nowrap w-100">
+                <a class="navbar-brand" href="{{ url('/') }}">PUBLIC LIBRARY</a>
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
@@ -92,28 +94,28 @@
             </div>
         </div>
     </nav>
-    <div class="carousel slide carousel-fade" data-ride="carousel" id="carouselExampleCaptions">
+    <div class="carousel slide carousel-fade" data-ride="carousel">
 
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="<?= asset('images/library_front.jpg') ?>" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>{{ __('welcome.carousel_caption1') }}</h5>
-                    <p class="carousel-text">{{ __('welcome.carousel_text1') }}</p>
+                <div class="carousel-caption main">
+                    <h5 class="main-header">{{ __('welcome.carousel_caption1') }}</h5>
+                    <p class="carousel-text main-text">{{ __('welcome.carousel_text1') }}</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="<?= asset('images/library_front.jpg') ?>" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>{{ __('welcome.carousel_caption2') }}</h5>
-                    <p class="carousel-text">{{ __('welcome.carousel_text2') }}</p>
+                <div class="carousel-caption main">
+                    <h5 class="main-header">{{ __('welcome.carousel_caption2') }}</h5>
+                    <p class="carousel-text main-text">{{ __('welcome.carousel_text2') }}</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="<?= asset('images/library_front.jpg') ?>" class="d-block w-100" alt="...">
-                <div class="carousel-caption">
-                    <h5>{{ __('welcome.carousel_caption3') }}</h5>
-                    <p class="carousel-text">{{ __('welcome.carousel_text3') }}</p>
+                <div class="carousel-caption main">
+                    <h5 class="main-header">{{ __('welcome.carousel_caption3') }}</h5>
+                    <p class="carousel-text main-text">{{ __('welcome.carousel_text3') }}</p>
                 </div>
             </div>
         </div>
@@ -122,7 +124,7 @@
         <h4 id="about-us">{{ __('welcome.about_us') }}</h4>
         <div class="row">
             <div class="col-2">
-                <img src="<?= asset('images/join_library.png') ?>" class="d-block" style="width:80px;height:80px" alt="...">
+                <img src="<?= asset('images/join_library.png') ?>" class="d-block about-us-img" style="width:80px;height:80px" alt="...">
             </div>
             <div class="col-10">
                 <h6 id="row-title">{{ __('welcome.join_library') }}</h6>
@@ -131,7 +133,7 @@
         </div>
         <div class="row">
             <div class="col col-2">
-                <img src="<?= asset('images/help.png') ?>" class="d-block" style="width:80px;height:80px" alt="...">
+                <img src="<?= asset('images/help.png') ?>" class="d-block about-us-img" style="width:80px;height:80px" alt="...">
             </div>
             <div class="col col-10">
                 <h6 id="row-title">{{ __('welcome.help') }}</h6>
@@ -140,7 +142,7 @@
         </div>
         <div class="row">
             <div class="col col-2">
-                <img src="<?= asset('images/ask.png') ?>" class="d-block" style="width:80px;height:80px" alt="...">
+                <img src="<?= asset('images/ask.png') ?>" class="d-block about-us-img" style="width:80px;height:80px" alt="...">
             </div>
             <div class="col col-10">
                 <h6 id="row-title">{{ __('welcome.ask') }}</h6>

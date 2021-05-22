@@ -24,14 +24,17 @@
 
 <body>
     <div id="container">
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">PUBLIC LIBRARY</a>
-                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+                <div class="d-flex flex-nowrap w-100">
+                    <a class="navbar-brand" href="{{ url('/') }}">PUBLIC LIBRARY</a>
+                    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item {{ Route::currentRouteNamed('/') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ url('/') }}"><i class="bi bi-house-door"></i> </span>{{ __('navigation.nav_home') }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('/') }}"><i class="bi bi-house-door"></i> </span>{{ __('navigation.nav_home') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -39,13 +42,13 @@
                                 {{ __('navigation.nav_catalog') }}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('books') ? 'active' : '' }}" href="{{ url('/books') }}"><i class="bi bi-book"></i> {{ __('navigation.nav_books') }}</a></li>
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('authors') ? 'active' : '' }}" href="{{ url('/authors') }}"><i class="bi bi-person"></i> {{ __('navigation.nav_authors') }}</a></li>
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('genres') ? 'active' : '' }}" href="{{ url('/genres') }}"><i class="bi bi-list-ul"></i> {{ __('navigation.nav_genres') }}</a></li>
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('publishers') ? 'active' : '' }}" href="{{ url('/publishers') }}"><i class="bi bi-people"></i> {{ __('navigation.nav_publishers') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/books') }}"><i class="bi bi-book"></i> {{ __('navigation.nav_books') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/authors') }}"><i class="bi bi-person"></i> {{ __('navigation.nav_authors') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/genres') }}"><i class="bi bi-list-ul"></i> {{ __('navigation.nav_genres') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/publishers') }}"><i class="bi bi-people"></i> {{ __('navigation.nav_publishers') }}</a></li>
                                 @auth
                                 @if(auth()->user()->role->name == 'Administrator')
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('users') ? 'active' : '' }}" href="{{ url('/users') }}"><i class="bi bi-person-check"></i> {{ __('navigation.nav_users') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/users') }}"><i class="bi bi-person-check"></i> {{ __('navigation.nav_users') }}</a></li>
                                 @endif
                                 @endauth
                             </ul>
@@ -71,14 +74,14 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @guest
                                 @if (Route::has('login'))
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('login') ? 'active' : '' }}" href="{{ url('/login') }}"><i class="bi bi-key"></i> {{ __('navigation.nav_login') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/login') }}"><i class="bi bi-key"></i> {{ __('navigation.nav_login') }}</a></li>
                                 @endif
 
                                 @if (Route::has('register'))
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('register') ? 'active' : '' }}" href="{{ url('/register') }}"><i class="bi bi-person-plus"></i> {{ __('navigation.nav_register') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/register') }}"><i class="bi bi-person-plus"></i> {{ __('navigation.nav_register') }}</a></li>
                                 @endif
                                 @else
-                                <li><a class="nav-link dropdown-item {{ Route::currentRouteNamed('publishers') ? 'active' : '' }}" href="{{ url('/profile') }}"><i class="bi bi-gear"></i> {{ __('navigation.nav_settings') }}</a></li>
+                                <li><a class="nav-link dropdown-item" href="{{ url('/profile') }}"><i class="bi bi-gear"></i> {{ __('navigation.nav_settings') }}</a></li>
                                 <li><a class="nav-link dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="bi bi-door-open"></i> {{ __('navigation.nav_logout') }}</a></li>
                                 <form hidden id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
